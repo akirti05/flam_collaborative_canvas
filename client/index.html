@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flam Collaborative Canvas</title>
+  <link rel="stylesheet" href="/client/style.css" />
+</head>
+<body>
+  <!-- Page Title -->
+  <header class="page-header">
+    <h1>🎨 Flam Collaborative Canvas</h1>
+  </header>
+
+  <div class="shell">
+    <!-- Sidebar (left) -->
+    <aside class="sidebar">
+      <div class="card">
+        <label class="card-label">Brush</label>
+        <select id="brush" class="block-input">
+          <option value="pencil">🖊️ Pen</option>
+          <option value="marker">🖍️ Marker</option>
+          <option value="paint">🎨 Paint</option>
+          <option value="eraser">🧽 Eraser</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label class="card-label">Color</label>
+        <input id="color" type="color" class="block-input" value="#1f7aff" />
+      </div>
+
+      <div class="card">
+        <label class="card-label">Size</label>
+        <input id="size" type="range" min="1" max="30" value="6" class="block-input" />
+      </div>
+
+      <div class="card">
+        <button id="undo" class="btn">↩️ Undo</button>
+        <button id="redo" class="btn">↪️ Redo</button>
+        <button id="clear" class="btn danger">🧼 Clear</button>
+      </div>
+    </aside>
+
+    <!-- Stage (right/center) -->
+    <main class="stage">
+      <!-- Presence bar ABOVE the board -->
+      <div id="presenceBar" class="presence-bar"></div>
+
+      <!-- Fixed board -->
+      <div class="canvas-container">
+        <canvas id="draw" width="1100" height="640"></canvas>
+        <canvas id="overlay" width="1100" height="640"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <!-- kept internally; not shown -->
+  <p id="status" style="display:none">Connecting...</p>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/client/main.js"></script>
+</body>
+</html>
