@@ -34,10 +34,3 @@ It focuses on raw implementation without frontend frameworks or third-party draw
    ```bash
   git clone https://github.com/akirti05/flam_collaborative_canvas.git
   cd flam_collaborative_canvas
-2. Install Dependencies
-  npm install
-3. Run the application
-   npm run dev
-4. Open in browser
-   http://localhost:3001
-
