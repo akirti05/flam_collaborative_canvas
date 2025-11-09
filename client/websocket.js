@@ -9,6 +9,7 @@ export function connect() {
     reconnection: true,
     reconnectionAttempts: 10,
     reconnectionDelay: 1500,
+    withCredentials: false,
   });
 
   socket.on("connect", () => {
