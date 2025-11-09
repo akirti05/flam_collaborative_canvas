@@ -3,10 +3,14 @@
 A real-time multi-user collaborative drawing application built using Vanilla JavaScript, HTML5 Canvas, Node.js, and Socket.io.  
 Multiple users can draw simultaneously on the same canvas with synchronized updates, undo/redo functionality, and separate drawing rooms.
 
+---
+
 ## Overview
 
 The application demonstrates real-time data synchronization, event handling, and efficient canvas manipulation using native browser APIs.  
 It focuses on raw implementation without frontend frameworks or third-party drawing libraries.
+
+---
 
 ## Features
 
@@ -17,7 +21,9 @@ It focuses on raw implementation without frontend frameworks or third-party draw
 - Room-based drawing sessions (users in different rooms have independent canvases).
 - Connected user presence indicators with live online/offline updates.
 - Persistent in-memory canvas state for newly joined users.
-- Stable UI with a clear layout and aesthetic background.
+- Stable and aesthetic user interface.
+
+---
 
 ## Tech Stack
 
@@ -28,9 +34,11 @@ It focuses on raw implementation without frontend frameworks or third-party draw
 | Communication | WebSockets |
 | State Management | In-memory storage via `rooms.js` and `drawing-state.js` |
 
+---
+
 ## Setup Instructions
 
 1. **Clone the repository**
    ```bash
-  git clone https://github.com/akirti05/flam_collaborative_canvas.git
-  cd flam_collaborative_canvas
+   git clone https://github.com/akirti05/flam_collaborative_canvas.git
+   cd flam_collaborative_canvas
