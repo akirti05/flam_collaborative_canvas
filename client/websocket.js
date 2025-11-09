@@ -1,29 +1,16 @@
-// client/websocket.js
-
 let socket;
 
 export function connect() {
-  // Detect environment (local vs deployed)
-  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  const serverURL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3001"
+      : window.location.origin;
 
-  // Automatically choose base URL
-  const baseURL = isLocal
-    ? "http://localhost:3001"
-    : window.location.origin; // e.g., https://flam-collaborative-canvas.onrender.com
+  socket = io(serverURL, { transports: ["websocket"] });
 
-  // Initialize socket connection
-  socket = io(baseURL, {
-    transports: ["websocket"], // faster and reliable
-  });
-
-  console.log(`🔗 Connected to ${baseURL}`);
-
-  // Internal latency health-check (silent)
+  // keep alive
   setInterval(() => socket.emit("latency:ping", Date.now()), 1000);
-
-  socket.on("latency:pong", () => {
-    // Silent — keeps socket connection alive
-  });
+  socket.on("latency:pong", () => {});
 }
 
 export function getSocket() {
